@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>YouTube Downloader</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card container">
+      <h1>🎬 YouTube Downloader</h1>
+
+      <form id="form">
+        <input id="url" name="url" placeholder="YouTube linkini yapıştır" required>
+        <div class="radios">
+          <label><input type="radio" name="format" value="mp4"> MP4</label>
+          <label><input type="radio" name="format" value="mp3" checked> MP3</label>
+        </div>
+        <div class="actions">
+          <button id="start" type="submit">⬇️ İndir</button>
+          <button id="download-btn" type="button" style="display:none">📥 Dosyayı İndir</button>
+        </div>
+      </form>
+
+      <div id="status" class="status">
+        <div id="thumbnail" class="thumb"></div>
+        <div class="info">
+          <div id="title" class="title">Başlık: -</div>
+          <div id="size" class="size">Boyut: -</div>
+          <div id="percent" class="percent">%0</div>
+          <div id="message" class="message"></div> <!-- Playlist veya diğer mesajlar burada gösterilecek -->
+        </div>
+      </div>
+
+      <div id="progress-bar"><div id="progress"></div></div>
+    </div>
+  </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<div class="footer">
+  © 2025 by | Orahmetsevik
+</div>
+</body>
+</html>
